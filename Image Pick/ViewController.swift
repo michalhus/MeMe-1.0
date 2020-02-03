@@ -23,25 +23,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeWidth: 2.0,
     ]
     
-    
-    
-
-//    When a user taps inside a textfield, the default text should clear.
-//    This can be accomplished in textFieldDidBeginEditing method.
 //    Be sure to remove default text only, not user entered text.
 
-    
-    
-//  When a user presses return, the keyboard should be dismissed.
-//  This can be accomplished in textFieldShouldReturn.
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        top.text = "TOP"
-//        top.placeholder = "TOP"
-        bottom.text = "BOTTOM"
-//        bottom.placeholder = "BOTTOM"
+        
+//        top.text = "TOP"
+        top.placeholder = "TOP"
+//        bottom.text = "BOTTOM"
+        bottom.placeholder = "BOTTOM"
         top.textAlignment = .center
         bottom.textAlignment = .center
         top.defaultTextAttributes = memeTextAttributes
@@ -54,7 +44,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,12 +66,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
-//    Review This code
+//    Review This code - not to self
 //    didFinishPickingMediaWithInfo is part of the documentation need to review it
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
@@ -98,7 +86,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        return false
+//        return textField.resignFirstResponder() ? true : false
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -116,30 +105,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
          NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-
-
     @objc func keyboardWillShow(_ notification:Notification) {
+//animation open will see
         view.frame.origin.y = -getKeyboardHeight(notification)
     }
 
+    @objc func keyboardWillHide(_ notification:Notification) {
+        view.frame.origin.y = 0
+//        animation completion
+        
+    }
+    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
     
-    
-    @objc func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y = 0
-//            +getKeyboardHeight(notification)
-        
-//        Subscribe to the keyboard notification: .UIKeyboardWillHide
-//        Write the method keyboardWillHide to move the view frame back down to 0
-    }
+
     
     
 
-// Review info.plist
+// Review info.plist more into it
+    
 
 }
 

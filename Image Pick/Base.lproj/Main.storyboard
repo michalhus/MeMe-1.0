@@ -18,11 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-me-IYc">
-                                <rect key="frame" x="38.333333333333314" y="0.0" width="659.33333333333348" height="371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ieL-me-IYc" secondAttribute="height" multiplier="16:9" id="4dj-ba-SGi"/>
-                                </constraints>
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-me-IYc">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="370"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3F-8J-ng3">
                                 <rect key="frame" x="0.0" y="370" width="736" height="44"/>
@@ -54,17 +51,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ieL-me-IYc" secondAttribute="trailing" id="1Rs-XU-rG1"/>
                             <constraint firstItem="bGl-NL-s29" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="2Dl-rD-xDx"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="top" secondItem="bGl-NL-s29" secondAttribute="bottom" constant="30" id="3Mg-QQ-wT7" userLabel="Toolbar.top = Bottom.bottom "/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8cB-7a-dnp"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EBz-xA-0gl"/>
                             <constraint firstItem="bGl-NL-s29" firstAttribute="leading" secondItem="FyT-jj-8on" secondAttribute="leading" id="HGu-5V-ZUj"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="centerX" secondItem="bGl-NL-s29" secondAttribute="centerX" id="UQ5-AQ-Aq5"/>
+                            <constraint firstItem="ieL-me-IYc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zbq-pE-Fbu"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eGt-PN-Bff"/>
-                            <constraint firstItem="ieL-me-IYc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-21.5" id="gem-S2-PhD" userLabel="Image View.centerY = Safe Area.centerY"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nY4-6m-kkd" userLabel="Image View.top = Safe Area.top"/>
                             <constraint firstItem="FyT-jj-8on" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="pge-QX-w86" userLabel="Top.top = Safe Area.top"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qG1-hq-idp"/>
+                            <constraint firstItem="x3F-8J-ng3" firstAttribute="top" secondItem="ieL-me-IYc" secondAttribute="bottom" id="qIE-c8-Ry0"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="centerX" secondItem="FyT-jj-8on" secondAttribute="centerX" id="zyn-N4-1Kt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
