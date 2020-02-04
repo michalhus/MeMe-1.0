@@ -9,10 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
-//    Keyboard closing animation
-//    ADD and Check Info.plist
-//     TextField resized per needs
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var imageView: UIImageView!
@@ -47,6 +43,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.defaultTextAttributes = memeTextAttributes
         topTextField.delegate = self
         bottomTextField.delegate = self
+        
+        let btnShare = UIBarButtonItem(barButtonSystemItem:.action, target: self, action: #selector(btnShare_clicked))
+        self.navigationItem.rightBarButtonItem = btnShare
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +60,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
 
+    @IBAction func resetMeMe(_ sender: Any) {
+        imageView = nil
+        topTextField.text = ""
+        bottomTextField.text = ""
+    }
+    
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -112,7 +118,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @objc func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y = 0
+        view.frame.origin.y = 0.0
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -143,6 +149,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         // Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+    }
+ 
+    @objc func btnShare_clicked() {
+        print("Share button clicked")
     }
     
 }

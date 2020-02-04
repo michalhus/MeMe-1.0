@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,16 +15,16 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Pick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-me-IYc">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="314"/>
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-me-IYc">
+                                <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3F-8J-ng3">
-                                <rect key="frame" x="0.0" y="314" width="736" height="100"/>
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Camera" image="camera" id="19O-7i-EMH">
+                                    <barButtonItem systemItem="camera" id="19O-7i-EMH">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="C5C-tJ-lFi"/>
                                         </connections>
@@ -36,13 +36,20 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-NL-s29" userLabel="Bottom Text Field">
-                                <rect key="frame" x="0.0" y="269" width="736" height="15"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWt-uJ-EiV" userLabel="NavToolbar">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="ik3-qQ-JcF" userLabel="Share"/>
+                                    <barButtonItem systemItem="cancel" id="D1W-CK-5Js"/>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-NL-s29" userLabel="Bottom Text Field">
+                                <rect key="frame" x="0.0" y="376" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyT-jj-8on" userLabel="Top Text Field">
-                                <rect key="frame" x="0.0" y="30" width="736" height="15"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyT-jj-8on" userLabel="Top Text Field">
+                                <rect key="frame" x="0.0" y="104" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -55,12 +62,10 @@
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8cB-7a-dnp"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EBz-xA-0gl"/>
                             <constraint firstItem="bGl-NL-s29" firstAttribute="leading" secondItem="FyT-jj-8on" secondAttribute="leading" id="HGu-5V-ZUj"/>
-                            <constraint firstItem="bGl-NL-s29" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q9C-UL-Mqy"/>
                             <constraint firstItem="bGl-NL-s29" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tfr-Yg-ehZ"/>
-                            <constraint firstItem="ieL-me-IYc" firstAttribute="centerX" secondItem="bGl-NL-s29" secondAttribute="centerX" id="UQ5-AQ-Aq5"/>
                             <constraint firstItem="ieL-me-IYc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zbq-pE-Fbu"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eGt-PN-Bff"/>
-                            <constraint firstItem="ieL-me-IYc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nY4-6m-kkd" userLabel="Image View.top = Safe Area.top"/>
+                            <constraint firstItem="ieL-me-IYc" firstAttribute="top" secondItem="nWt-uJ-EiV" secondAttribute="bottom" constant="-44" id="nY4-6m-kkd" userLabel="Image View.top = Safe Area.top"/>
                             <constraint firstItem="FyT-jj-8on" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="pge-QX-w86" userLabel="Top.top = Safe Area.top"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qG1-hq-idp"/>
                             <constraint firstItem="x3F-8J-ng3" firstAttribute="top" secondItem="ieL-me-IYc" secondAttribute="bottom" id="qIE-c8-Ry0"/>
@@ -82,7 +87,4 @@
             <point key="canvasLocation" x="136.60714285714286" y="133.33333333333334"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera" width="100" height="100"/>
-    </resources>
 </document>
