@@ -360,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWBU49BNBX;
 				INFOPLIST_FILE = "Image Pick/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWBU49BNBX;
 				INFOPLIST_FILE = "Image Pick/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -19,14 +19,10 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
-	<key>NSPhotoLibraryUsageDescription
-
-NSPhotoLibraryUsageDescription
-
-NSPhotoLibraryUsageDescription
-
-</key>
-	<string></string>
+	<string>Need access to camera to take a picture that will be used for meme creation</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need access to photo library to use existing picture for meme creation</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Need access to save</string>
 </dict>
 </plist>
