@@ -54,10 +54,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     @IBAction func resetMeMe(_ sender: Any) {
-        imageView.image = nil
-        topTextField.text = ""
-        bottomTextField.text = ""
-        enableShareToggle()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
@@ -84,7 +81,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             if completed {
                 self.save()
             }else {
-                return
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -168,6 +165,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func save() {
         // Create the meme
         _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+        self.dismiss(animated: true, completion: nil)
         UIImageWriteToSavedPhotosAlbum(generateMemedImage(),nil,nil,nil)
     }
     
