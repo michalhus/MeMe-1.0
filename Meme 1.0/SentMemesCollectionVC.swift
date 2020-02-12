@@ -11,6 +11,8 @@ import UIKit
 
 class SentMemesCollectionVC:  UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     // MARK: Properties
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
@@ -19,6 +21,17 @@ class SentMemesCollectionVC:  UICollectionViewController {
     }
     
     // MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -26,7 +39,6 @@ class SentMemesCollectionVC:  UICollectionViewController {
     }
     
     // MARK: Collection View Data Source
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }
@@ -37,7 +49,7 @@ class SentMemesCollectionVC:  UICollectionViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         let combinedMemeText = meme.topText! + "..." + meme.bottomText!
-
+        
         // Set the name and image
         cell.memeLabel.text = combinedMemeText
         cell.memeImageView?.image = meme.memedImage
