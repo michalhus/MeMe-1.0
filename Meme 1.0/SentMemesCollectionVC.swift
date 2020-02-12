@@ -36,10 +36,11 @@ class SentMemesCollectionVC:  UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MemeCollectionViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
+        let combinedMemeText = meme.topText! + "..." + meme.bottomText!
+
         // Set the name and image
-        cell.memeLabel.text = meme.bottomText
+        cell.memeLabel.text = combinedMemeText
         cell.memeImageView?.image = meme.memedImage
-        //cell.schemeLabel.text = "Scheme: \(villain.evilScheme)"
         
         return cell
     }

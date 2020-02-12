@@ -34,8 +34,10 @@ class SentMemesTableVC:  UIViewController, UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecentlySentMeme")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
+        let combinedMemeText = meme.topText! + "..." + meme.bottomText!
+        
         // Set the name and image
-        cell.textLabel?.text = meme.bottomText
+        cell.textLabel?.text = combinedMemeText
         cell.imageView?.image = meme.memedImage
         
 //        // If the cell has a detail label, we will put the evil scheme in.
