@@ -2,4 +2,85 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meme 1.0/AppDelegate.swift"
+            timestampString = "603163821.581515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meme_1_0.AppDelegate.memes.getter : Swift.Array&lt;Meme_1_0.Meme&gt;"
+                  moduleName = "Meme 1.0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalhus/Udacity/MeMe-1/Meme%201.0/AppDelegate.swift"
+                  timestampString = "603128498.979412"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meme_1_0.AppDelegate.memes.setter : Swift.Array&lt;Meme_1_0.Meme&gt;"
+                  moduleName = "Meme 1.0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalhus/Udacity/MeMe-1/Meme%201.0/AppDelegate.swift"
+                  timestampString = "603128498.981621"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meme_1_0.AppDelegate.init() -&gt; Meme_1_0.AppDelegate"
+                  moduleName = "Meme 1.0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalhus/Udacity/MeMe-1/Meme%201.0/AppDelegate.swift"
+                  timestampString = "603128498.984118"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meme 1.0/AppDelegate.swift"
+            timestampString = "603163821.5815769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

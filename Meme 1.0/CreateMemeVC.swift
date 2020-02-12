@@ -164,9 +164,14 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     func save() {
         // Create the meme
-        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
         self.dismiss(animated: true, completion: nil)
         UIImageWriteToSavedPhotosAlbum(generateMemedImage(),nil,nil,nil)
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func enableShareToggle(){
