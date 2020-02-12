@@ -17,17 +17,12 @@ class MemeDetailViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    
     
     // MARK: Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.label.text = self.meme.bottomText
-        
         self.tabBarController?.tabBar.isHidden = true
-        
-        self.imageView!.image = UIImage(named: meme.bottomText!)
+        self.imageView!.image = meme.memedImage
     }
     
     override func viewWillDisappear(_ animated: Bool) {

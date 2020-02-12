@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
 import UIKit
-
 
 class SentMemesTableVC:  UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -34,17 +32,16 @@ class SentMemesTableVC:  UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecentlySentMeme")!
-        let villain = self.memes[(indexPath as NSIndexPath).row]
+        let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the name and image
-        cell.textLabel?.text = villain.bottomText
-        //        CANT BE NILL or it fails FIX THIS
-        cell.imageView?.image = UIImage(named: villain.topText!)
+        cell.textLabel?.text = meme.bottomText
+        cell.imageView?.image = meme.memedImage
         
-        // If the cell has a detail label, we will put the evil scheme in.
-        if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = "Scheme: \(villain.topText)"
-        }
+//        // If the cell has a detail label, we will put the evil scheme in.
+//        if let detailTextLabel = cell.detailTextLabel {
+//            detailTextLabel.text = "Scheme: \(meme.topText)"
+//        }
         
         return cell
     }
@@ -53,10 +50,10 @@ class SentMemesTableVC:  UIViewController, UITableViewDataSource, UITableViewDel
         return true
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailViewController
-            detailController.meme = self.memes[(indexPath as NSIndexPath).row]
-            self.navigationController!.pushViewController(detailController, animated: true)
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailViewController
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
     
 }
