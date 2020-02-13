@@ -50,7 +50,7 @@ class SentMemesCollectionVC:  UICollectionViewController {
         
         let combinedMemeText = meme.topText! + "..." + meme.bottomText!
         
-        // Set the name and image
+        // Set the text and image
         cell.memeLabel.text = combinedMemeText
         cell.memeImageView?.image = meme.memedImage
         

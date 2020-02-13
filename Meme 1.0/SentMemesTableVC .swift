@@ -36,14 +36,9 @@ class SentMemesTableVC:  UIViewController, UITableViewDataSource, UITableViewDel
         
         let combinedMemeText = meme.topText! + "..." + meme.bottomText!
         
-        // Set the name and image
+        // Set the text and image
         cell.textLabel?.text = combinedMemeText
         cell.imageView?.image = meme.memedImage
-        
-//        // If the cell has a detail label, we will put the evil scheme in.
-//        if let detailTextLabel = cell.detailTextLabel {
-//            detailTextLabel.text = "Scheme: \(meme.topText)"
-//        }
         
         return cell
     }
