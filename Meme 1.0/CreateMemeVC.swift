@@ -105,6 +105,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
         }
+        enableShareToggle()
         dismiss(animated: true, completion: nil)
     }
     
